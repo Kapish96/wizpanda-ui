@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "wizpanda-ui"
+  "defaultProject": "wizpanda-ui",
+  "cli": {
+    "analytics": "86ea3b5e-ee1a-433d-85de-de2c671533d9"
+  }
 }

@@ -1,0 +1,19 @@
+.title-center {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size:27px
+  }
+  
+  .example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+  
+  .error{
+    background-color: rgb(245, 140, 140);
+    font-size: 1em;
+    text-align: center;
+    background-size: auto auto ;
+  
+  }
