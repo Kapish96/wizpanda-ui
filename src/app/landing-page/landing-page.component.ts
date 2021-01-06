@@ -25,10 +25,10 @@ export class LandingPageComponent implements OnInit {
 
        
        case 'LOGIN':
-         this.router.navigate(['/fas/luxReshape/glstasPre']);
+         this.router.navigate(['/login']);
          break;
        case 'SIGNUP':
-         this.router.navigate(['/fas/luxReshape/securityAssestTransfer']);
+         this.router.navigate(['/signUp']);
          break;
       
        default:
