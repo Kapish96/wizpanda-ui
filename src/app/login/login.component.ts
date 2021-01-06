@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { NotifierService } from 'angular-notifier';
 import { LoginServiceService } from '../services/login-service/login-service.service';
 
+import { MatTableDataSource } from '@angular/material/table';
 import { StudentVO } from '../interfaces/StudentVO';
+import { MatDialog } from '@angular/material/dialog';
+import { AlertBox } from '../create-account/create-account.component';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +16,17 @@ export class LoginComponent implements OnInit {
 
 
   private notifier : NotifierService;
-  constructor(notifier: NotifierService, private loginServiceService: LoginServiceService) { 
+  public loggedIn: boolean = false;
+  public studentVO: any;
+  public displayedColumns: string[] = [];
+  public columnDefs = [{headerName:'Name', field:'name'},
+  {headerName:'Email', field:'email'},
+  {headerName:'Number', field:'number'},
+];
+  public showTable: boolean =false;
+  public dataSource:  MatTableDataSource<any> | undefined;
+  constructor(notifier: NotifierService, private loginServiceService: LoginServiceService,
+    private dialog: MatDialog) { 
     this.notifier = notifier; 
   }
 
@@ -21,11 +34,45 @@ export class LoginComponent implements OnInit {
   }
 
   public login(email: string, password: string){
+
+    let message = "";
+    let flag = false;
+    if(email=="" || password==""){
+      message = "Please fill the required details";
+      flag = true;
+    } 
+    if(flag){
+      const dialogRef = this.dialog.open(AlertBox, {
+        width: '250px',
+      });
+      let instance = dialogRef.componentInstance;
+      instance.message = message;
+      return;
+    }
+
     let studentVO = new StudentVO("", email, "", password);
     this.loginServiceService.login(studentVO).subscribe(data =>{
-
+      this.loggedIn = true;
     }, error =>{
       this.notifier.notify("error","Email or Username is Wrong");
+    });
+  }
+
+  public showStudents(){
+    this.loginServiceService.getStudents().subscribe(data =>{
+      if(data.length>0){
+        this.studentVO = data;
+      console.log(JSON.stringify(this.studentVO));
+      this.showTable = true;
+      // this.dataSource = new MatTableDataSource<any>(data);
+      // this.displayedColumns =  Object.keys(data[0]);
+
+      } else {
+        this.notifier.notify("info","No data available");
+      }
+    },error =>{
+      this.showTable = false;
+      console.log("Error while fetching data");
     });
   }
 

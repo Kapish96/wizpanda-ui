@@ -14,7 +14,9 @@ import { NotifierModule } from 'angular-notifier';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
-
+import { AgGridModule } from 'ag-grid-angular';
+// import {MatTableModule, MatTableDataSource} from '@angular/material/table';
+// import { DataSource } from '@angular/cdk/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NotifierModule,
     HttpClientModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AgGridModule.withComponents([])
   ],
   providers: [],
   bootstrap: [AppComponent]

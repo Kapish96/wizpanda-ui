@@ -19,6 +19,12 @@ export class LoginServiceService {
     return this._http.post(path,studentVO, {responseType: 'text'}).pipe(catchError(this.errorHandler));
   }
 
+  public getStudents(): Observable<StudentVO[]>{
+    let path = this.baseUrl+"students";
+    
+    return this._http.get<StudentVO[]>(path).pipe(catchError(this.errorHandler));
+  }
+
   public errorHandler(error: HttpErrorResponse){
     return throwError(error.message || "Server Error");
   }
