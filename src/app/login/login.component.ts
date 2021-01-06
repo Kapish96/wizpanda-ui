@@ -38,18 +38,10 @@ export class LoginComponent implements OnInit {
     let message = "";
     let flag = false;
     if(email=="" || password==""){
-      message = "Please fill the required details";
-      flag = true;
+      this.notifier.notify("error","Please fill the required details");
+      return ;
     } 
-    if(flag){
-      const dialogRef = this.dialog.open(AlertBox, {
-        width: '250px',
-      });
-      let instance = dialogRef.componentInstance;
-      instance.message = message;
-      return;
-    }
-
+    
     let studentVO = new StudentVO("", email, "", password);
     this.loginServiceService.login(studentVO).subscribe(data =>{
       this.loggedIn = true;
