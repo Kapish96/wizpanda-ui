@@ -1,0 +1,20 @@
+label {
+    width:80px;
+    clear:left;
+    text-align:right;
+    padding-right:10px;
+}
+
+input, label {
+    float:left;
+}
+
+.submit-button {
+    margin: 0 0 0 8em;
+    padding: 0.1em 1em;
+    font-size: 12px;
+    color: #fff;
+    width: auto;
+    background-color: #0054a4; 
+    /* float:left; */
+  }

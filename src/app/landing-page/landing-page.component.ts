@@ -17,7 +17,7 @@ export class LandingPageComponent implements OnInit {
 
    tiles: GridTile[] = [
     { text: 'LOGIN', cols: 1, rows: 1, color: '#FFCDD2' },
-    { text: 'SIGNUP', cols: 1, rows: 1, color: '#C5CAE9' },
+    { text: 'CREATE ACCOUNT', cols: 1, rows: 1, color: '#C5CAE9' },
    ];
 
    onItemClick(item: GridTile): void {
@@ -27,8 +27,8 @@ export class LandingPageComponent implements OnInit {
        case 'LOGIN':
          this.router.navigate(['/login']);
          break;
-       case 'SIGNUP':
-         this.router.navigate(['/signUp']);
+       case 'CREATE ACCOUNT':
+         this.router.navigate(['/createAccount']);
          break;
       
        default:
