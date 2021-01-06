@@ -33,7 +33,10 @@
 <div class="d-flex justify-content-center" style="height:50px">
 
     <div>
-        <button mat-raised-button type="submit" class="submit-button" >Create Account</button> 
+        <button mat-raised-button type="submit" class="submit-button" (click)="createAccount(name.value, email.value, number.value,
+        password.value)">Create Account</button> 
     </div>
     
 </div>
+
+<notifier-container></notifier-container>

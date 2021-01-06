@@ -10,6 +10,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { NotifierModule } from 'angular-notifier';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     AppRoutingModule,
     MatToolbarModule,
     MatGridListModule,
-    MatButtonModule
+    MatButtonModule,
+    NotifierModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
