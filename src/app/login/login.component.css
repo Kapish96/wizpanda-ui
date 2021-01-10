@@ -1,4 +1,4 @@
-label {
+/* label {
   width:80px;
   clear:left;
   text-align:right;
@@ -9,11 +9,90 @@ input, label {
   float:left;
 }
 
+.item{
+  padding:0 17px;
+  align-self: middle;
+}
+
 .submit-button {
-  margin: 0 0 0 8em;
+  margin: 0 0 0 5em;
   padding: 0.1em 1em;
   font-size: 12px;
   color: #fff;
   width: auto;
   background-color: #0054a4; 
+} */
+
+
+.submit-button {
+  margin: 0 0 0 0em;
+  padding: 0.1em 1em;
+  font-size: 13px;
+  color: #fff;
+  width: auto;
+  background-color: #0054a4; 
+}
+.item{
+  padding:0 17px;
+  align-self: middle;
+}
+
+
+.mat-form-field.mat-form-field {
+  font-size: 12px;
+}
+
+/* .submit-request {
+  margin: 0 0 0 1em;
+  padding: 0.1em 1em;
+  font-size: 12px;
+  color: #fff;
+  width: auto;
+  background-color: #0054a4; 
+} */
+
+.mat-table {
+  border: 2px solid gray;
+  padding-left: 20px;
+  /* margin-left: 5px; */
+}
+
+.mat-cell {
+  border: 1px solid gray;
+  font-size: 10px;
+  text-align: center;
+}
+
+th.mat-header-cell {
+font-size: 10px;
+padding: 2px 2px;
+color: white;
+white-space: nowrap;
+text-align: center;
+border: 1px solid gray;
+background-color: darkslategrey;
+}
+
+tr.mat-header-row {
+height: 2.2em;
+background-color: #00695c;
+}
+tr.mat-row {
+height: 1.8em;
+}
+
+.mat-progress-spinner, .mat-spinner {
+  position: absolute;
+  top:250px;
+  left: 20%;
+  margin: -50px 0 0 -50px;
+  z-index: 2;
+}
+
+.mat-row:nth-child(even) {
+  background-color: #fefefe;
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #e0f2f1;
 }

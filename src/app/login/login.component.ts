@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
 ];
   public showTable: boolean =false;
   public dataSource:  MatTableDataSource<any> | undefined;
+  public name: string = "";
   constructor(notifier: NotifierService, private loginServiceService: LoginServiceService,
     private dialog: MatDialog) { 
     this.notifier = notifier; 
@@ -45,6 +46,7 @@ export class LoginComponent implements OnInit {
     let studentVO = new StudentVO("", email, "", password);
     this.loginServiceService.login(studentVO).subscribe(data =>{
       this.loggedIn = true;
+      this.name = JSON.stringify(data);
     }, error =>{
       this.notifier.notify("error","Email or Username is Wrong");
     });

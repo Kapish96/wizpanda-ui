@@ -1,42 +1,42 @@
 
 
 <br><br>
-<div class="d-flex justify-content-center" style="height:50px">
-    <div class="item">
-            <Label for="name"> Name: </Label>
-            <input #name  type="text" name="name" id="name" required>
-    </div>
-</div>
-
-
-<div class="d-flex justify-content-center" style="height:50px">
-    <div class="item">
-            <Label for="email">Email: </Label>
-            <input #email  type="text" name="email" required id="email">
-    </div>
-</div>
-
-<div class="d-flex justify-content-center" style="height:50px">
-    <div class="item">
-        <Label for="number">Mobile No: </Label>
-        <input #number type="text" name="number" required id="number">
-    </div>
-</div>
-
-<div class="d-flex justify-content-center" style="height:50px">
-    <div class="item">
-        <Label for="password">Password: </Label>
-        <input #password type="password" name="password" required id="password"> 
-    </div>
-</div>
-
-<div class="d-flex justify-content-center" style="height:50px">
-
-    <div>
-        <button mat-raised-button type="submit" class="submit-button" (click)="createAccount(name.value, email.value, number.value,
-        password.value)">Create Account</button> 
+    <div class="d-flex justify-content-center" style="height:50px">
+        <div class="item">
+                <Label for="name"> Name: </Label>
+                <input #name  type="text" name="name" id="name" required>
+        </div>
     </div>
     
-</div>
+    
+    <div class="d-flex justify-content-center" style="height:50px">
+        <div class="item">
+                <Label for="email">Email: </Label>
+                <input #email  type="text" name="email" required id="email">
+        </div>
+    </div>
+    
+    <div class="d-flex justify-content-center" style="height:50px">
+        <div class="item">
+            <Label for="number">Mobile No: </Label>
+            <input #number type="text" name="number" required id="number">
+        </div>
+    </div>
+    
+    <div class="d-flex justify-content-center" style="height:50px">
+        <div class="item">
+            <Label for="password">Password: </Label>
+            <input #password type="password" name="password" required id="password"> 
+        </div>
+    </div>
+    
+    <div class="d-flex justify-content-center" style="height:50px">
+    
+        <div>
+            <button mat-raised-button type="submit" class="submit-button" (click)="createAccount(name.value, email.value, number.value,
+            password.value)">Create Account</button> 
+        </div>
+        
+    </div>
 
 <notifier-container></notifier-container>

@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { AgGridModule } from 'ag-grid-angular';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 // import {MatTableModule, MatTableDataSource} from '@angular/material/table';
 // import { DataSource } from '@angular/cdk/table';
 @NgModule({
@@ -35,6 +37,8 @@ import { AgGridModule } from 'ag-grid-angular';
     HttpClientModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
     AgGridModule.withComponents([])
   ],
   providers: [],
