@@ -1,4 +1,4 @@
-label {
+/* label {
     width:80px;
     clear:left;
     text-align:right;
@@ -16,5 +16,23 @@ input, label {
     color: #fff;
     width: auto;
     background-color: #0054a4; 
-    /* float:left; */
+    float:left;
+  } */
+
+  .submit-button {
+    margin: 0.5em 0 0em 0em;
+    padding: 0.1em 1em;
+    font-size: 13px;
+    color: #fff;
+    width: auto;
+    background-color: #0054a4; 
+  }
+  .item{
+    padding:0 17px;
+    align-self: middle;
+  }
+  
+  
+  .mat-form-field.mat-form-field {
+    font-size: 12px;
   }

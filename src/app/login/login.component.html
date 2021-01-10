@@ -53,9 +53,10 @@
     </div>
 
     <div *ngIf="showTable">
-
+        <div class="d-flex justify-content-center" style="height:50px">
         <ag-grid-angular style="width: 500px; height: 180px;"
         [rowData]="studentVO" [columnDefs]="columnDefs" class="ag-theme-balham"></ag-grid-angular>
+        </div>  
 
  
         <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
