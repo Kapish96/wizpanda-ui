@@ -43,7 +43,7 @@ export class CreateAccountComponent implements OnInit {
       name: ['', Validators.required],
       password: ['', Validators.required],
       number: ['', Validators.required],
-      email: ['', [ Validators.email]]
+      email: ['', [ Validators.email, Validators.required]]
   });
   }
 

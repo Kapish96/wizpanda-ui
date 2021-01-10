@@ -12,7 +12,7 @@
             <div class="item">
                 <mat-form-field appearance="outline">
                     <mat-label>USERNAME</mat-label>
-                    <input type="text" #email matInput formControlName="email" class="formControl" [ngClass]="{ 'is-invalid': f.email.errors }">
+                    <input type="text" #email matInput formControlName="email" required class="formControl" [ngClass]="{ 'is-invalid': f.email.errors }">
                     <mat-error *ngIf="formControl.hasError('required')">
                       User Name is <strong>required</strong>
                     </mat-error>
@@ -24,7 +24,7 @@
             <div class="item">
                 <mat-form-field appearance="outline">
                     <mat-label>PASSWORD</mat-label>
-                    <input type="password" #password matInput formControlName="password" [ngClass]="{ 'is-invalid': f.password.errors }"
+                    <input type="password" #password matInput formControlName="password" required [ngClass]="{ 'is-invalid': f.password.errors }"
                     class="formControl">
                     <mat-error *ngIf="formControl.hasError('required')">
                       Password is <strong>required</strong>
