@@ -5,50 +5,76 @@
         </mat-grid-tile>
     </mat-grid-list>
 </div>
-<div class="d-flex justify-content-center" style="height:50px">
-    <div class="item">
-        <mat-form-field appearance="outline">
-            <mat-label>NAME</mat-label>
-            <input #name matInput type="text" name="name" required>
-        </mat-form-field>
-    </div>
-</div>
-
-<div class="d-flex justify-content-center" style="height:50px">
-    <div class="item">
-        <mat-form-field appearance="outline">
-            <mat-label>EMAIL</mat-label>
-            <input #email matInput type="text" name="email" required>
-        </mat-form-field>
-    </div>
-</div>
-
-<div class="d-flex justify-content-center" style="height:50px">
-    <div class="item">
-        <mat-form-field appearance="outline">
-            <mat-label>MOBIL NO.</mat-label>
-            <input #number matInput type="text" name="number" required>
-        </mat-form-field>
-    </div>
-</div>
-
-<div class="d-flex justify-content-center" style="height:50px">
-
-    <div class="item">
-        <mat-form-field appearance="outline">
-            <mat-label>PASSWORD</mat-label>
-            <input #password matInput type="password" name="password" required>
-        </mat-form-field>
+<form [formGroup]="createAccountForm" (ngSubmit)="onSubmit()">
+    <div class="d-flex justify-content-center" style="height:50px">
+        <div class="item">
+            <mat-form-field appearance="outline">
+                <mat-label>NAME</mat-label>
+                <input type="text" #name matInput formControlName="name" class="formControl" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                <mat-error *ngIf="formControl.hasError('required')">
+                  Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
     </div>
 
-</div>
-<div class="d-flex justify-content-center" style="height:50px">
+    <div class="d-flex justify-content-center" style="height:50px">
+        <div class="item">
 
-    <div>
-        <button mat-raised-button type="submit" class="submit-button" (click)="createAccount(name.value, email.value, number.value,
-            password.value)">Create Account</button> 
+            <!-- <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type="email" #email matInput formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                </div>
+            </mat-form-field> -->
+
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type="email" #email matInput formControlName="email" class="formControl" [ngClass]="{ 'is-invalid': f.email.errors }">
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                  Email is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('email')">
+                  Email is <strong>invalid</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
     </div>
+    
+    <div class="d-flex justify-content-center" style="height:50px">
+        <div class="item">
 
-</div>
+            <mat-form-field appearance="outline">
+                <mat-label>MOBILE NO.</mat-label>
+                <input type="text" #number matInput formControlName="number" class="formControl" [ngClass]="{ 'is-invalid': f.number.errors }">
+                <mat-error *ngIf="formControl.hasError('required')">
+                  Mobile No. is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    
+    <div class="d-flex justify-content-center" style="height:50px">
+        <div class="item">
+            <mat-form-field appearance="outline">
+                <mat-label>PASSWORD</mat-label>
+                <input type="password" #password matInput formControlName="password" [ngClass]="{ 'is-invalid': f.password.errors }"
+                class="formControl">
+                <mat-error *ngIf="formControl.hasError('required')">
+                  Password is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" style="height:50px">
+    
+        <div>
+            <button mat-raised-button type="submit" class="submit-button">Create Account</button> 
+        </div>
+    
+    </div>
+</form>
 
 <notifier-container></notifier-container>

@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgGridModule } from 'ag-grid-angular';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import {MatTableModule, MatTableDataSource} from '@angular/material/table';
 // import { DataSource } from '@angular/cdk/table';
 @NgModule({
@@ -39,6 +40,9 @@ import { MatInputModule } from '@angular/material/input';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
+
+    FormsModule,
+    ReactiveFormsModule,
     AgGridModule.withComponents([])
   ],
   providers: [],

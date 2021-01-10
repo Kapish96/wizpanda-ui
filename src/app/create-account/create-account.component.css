@@ -20,7 +20,7 @@ input, label {
   } */
 
   .submit-button {
-    margin: 0.5em 0 0em 0em;
+    margin: 2em 0 0em 0em;
     padding: 0.1em 1em;
     font-size: 13px;
     color: #fff;
@@ -28,6 +28,7 @@ input, label {
     background-color: #0054a4; 
   }
   .item{
+    margin: 0.5em 0 0em 0em;
     padding:0 17px;
     align-self: middle;
   }

@@ -6,33 +6,41 @@
             </mat-grid-tile>
         </mat-grid-list>
     </div>
-    <div class="d-flex justify-content-center" style="height:50px">
-
-        <div class="item">
-            <mat-form-field appearance="outline">
-                <mat-label>USER NAME</mat-label>
-                <input #userName matInput type="text" name="userName" required>
-            </mat-form-field>
+ 
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="d-flex justify-content-center" style="height:50px">
+            <div class="item">
+                <mat-form-field appearance="outline">
+                    <mat-label>USERNAME</mat-label>
+                    <input type="text" #email matInput formControlName="email" class="formControl" [ngClass]="{ 'is-invalid': f.email.errors }">
+                    <mat-error *ngIf="formControl.hasError('required')">
+                      User Name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
         </div>
+        
+        <div class="d-flex justify-content-center" style="height:50px">
+            <div class="item">
+                <mat-form-field appearance="outline">
+                    <mat-label>PASSWORD</mat-label>
+                    <input type="password" #password matInput formControlName="password" [ngClass]="{ 'is-invalid': f.password.errors }"
+                    class="formControl">
+                    <mat-error *ngIf="formControl.hasError('required')">
+                      Password is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
     
-    </div>
-    <div class="d-flex justify-content-center" style="height:50px">
-
-        <div class="item">
-            <mat-form-field appearance="outline">
-                <mat-label>PASSWORD</mat-label>
-                <input #password matInput type="password" name="password" required>
-            </mat-form-field>
+            </div>
         </div>
-    
-    </div>
-    <div class="d-flex justify-content-center" style="height:50px">
-
-        <div>
-            <button mat-raised-button type="submit" class="submit-button" (click)="login(userName.value, password.value)">Login</button>
+        <div class="d-flex justify-content-center" style="height:50px">
+        
+            <div>
+                <button mat-raised-button type="submit" class="submit-button">Login</button> 
+            </div>
+        
         </div>
-    
-    </div>
+    </form>
     
 </div>
 
