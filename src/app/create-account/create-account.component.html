@@ -6,11 +6,11 @@
     </mat-grid-list>
 </div>
 <form [formGroup]="createAccountForm" (ngSubmit)="onSubmit()">
-    <div class="d-flex justify-content-center" style="height:50px">
+    <div class="d-flex justify-content-center" style="height:60px">
         <div class="item">
             <mat-form-field appearance="outline">
                 <mat-label>NAME</mat-label>
-                <input type="text" #name matInput formControlName="name" required class="formControl" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                <input type="text" #name matInput formControlName="name" required class="formControl" [ngClass]="{ 'is-invalid': f.name.errors }">
                 <mat-error *ngIf="formControl.hasError('required')">
                   Name is <strong>required</strong>
                 </mat-error>
@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <div class="d-flex justify-content-center" style="height:50px">
+    <div class="d-flex justify-content-center" style="height:60px">
         <div class="item">
 
             <!-- <mat-form-field appearance="outline">
@@ -41,7 +41,7 @@
         </div>
     </div>
     
-    <div class="d-flex justify-content-center" style="height:50px">
+    <div class="d-flex justify-content-center" style="height:60px">
         <div class="item">
 
             <mat-form-field appearance="outline">
@@ -54,7 +54,7 @@
         </div>
     </div>
     
-    <div class="d-flex justify-content-center" style="height:50px">
+    <div class="d-flex justify-content-center" style="height:60px">
         <div class="item">
             <mat-form-field appearance="outline">
                 <mat-label>PASSWORD</mat-label>
@@ -67,7 +67,7 @@
 
         </div>
     </div>
-    <div class="d-flex justify-content-center" style="height:50px">
+    <div class="d-flex justify-content-center" style="height:60px">
     
         <div>
             <button mat-raised-button type="submit" class="submit-button">Create Account</button> 
